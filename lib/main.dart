@@ -15,7 +15,11 @@ class Pokedex extends StatelessWidget {
     return MaterialApp(
       title: 'Pokédex',
       home: Scaffold(
-        appBar: AppBar(title: Text("Pokédex")),
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text("Pokédex"),
+          backgroundColor: Colors.blueGrey[500],
+        ),
         body: buildPokemonScreen(),
       ),
     );
