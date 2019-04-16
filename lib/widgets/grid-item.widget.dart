@@ -26,7 +26,7 @@ class GridItem extends StatelessWidget {
               ),
               decoration: BoxDecoration(
                 color: Colors.blueGrey[400],
-                borderRadius: BorderRadius.circular(2000),
+                shape: BoxShape.circle,
               ),
             ),
             Text(
