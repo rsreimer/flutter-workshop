@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/models/pokemon.model.dart';
+import 'package:pokedex/widgets/badge.widget.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Pokemon pokemon;
+  final TextStyle headerStyle = TextStyle(color: Colors.white, fontSize: 18);
 
   DetailsScreen({this.pokemon});
 
@@ -31,6 +33,37 @@ class DetailsScreen extends StatelessWidget {
                   pokemon.name.toString(),
                   style: TextStyle(fontSize: 24, color: Colors.white),
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    PokeBadge(
+                      title: 'Height:',
+                      text: pokemon.height,
+                    ),
+                    PokeBadge(
+                      title: 'Weight:',
+                      text: pokemon.weight,
+                    )
+                  ],
+                ),
+                Text('Types', style: headerStyle),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: pokemon.type
+                      .map((type) => PokeBadge(
+                            text: type,
+                            color: Colors.green,
+                          ))
+                      .toList(),
+                ),
+                Text('Weaknesses', style: headerStyle),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: pokemon.weaknesses
+                      .map((weakness) =>
+                          PokeBadge(text: weakness, color: Colors.red))
+                      .toList(),
+                )
               ],
             ),
           ),

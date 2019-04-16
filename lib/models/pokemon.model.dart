@@ -9,10 +9,10 @@ class Pokemon {
   String img;
   String height;
   String weight;
-  List<String> types;
+  List<String> type;
   List<String> weaknesses;
 
-  Pokemon(this.name, this.img, this.id, this.types, this.height, this.weight,
+  Pokemon(this.name, this.img, this.id, this.type, this.height, this.weight,
       this.weaknesses);
 
   factory Pokemon.fromJson(Map<String, dynamic> json) =>

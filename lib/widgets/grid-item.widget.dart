@@ -25,8 +25,8 @@ class GridItem extends StatelessWidget {
                 tag: pokemon.id,
               ),
               decoration: BoxDecoration(
+                shape: BoxShape.circle,
                 color: Colors.blueGrey[400],
-                borderRadius: BorderRadius.circular(2000),
               ),
             ),
             Text(
