@@ -1,21 +1,23 @@
-import 'package:json_annotation/json_annotation.dart';
-
-part 'pokemon.model.g.dart';
-
-@JsonSerializable()
 class Pokemon {
-  int id;
+  String number;
   String name;
-  String img;
+  String image;
   String height;
   String weight;
-  List<String> types;
+  List<String> type;
   List<String> weaknesses;
 
-  Pokemon(this.name, this.img, this.id, this.types, this.height, this.weight,
-      this.weaknesses);
+  Pokemon(this.name, this.image, this.number, this.type, this.height, this.weight, this.weaknesses);
 
-  factory Pokemon.fromJson(Map<String, dynamic> json) =>
-      _$PokemonFromJson(json);
-  Map<String, dynamic> toJson() => _$PokemonToJson(this);
+  factory Pokemon.fromJson(Map<String, dynamic> json) {
+    return Pokemon(
+      json['name'] as String,
+      json['image'] as String,
+      json['number'] as String,
+      (json['type'] as List)?.map((e) => e as String)?.toList(),
+      json['height'] as String,
+      json['weight'] as String,
+      (json['weaknesses'] as List)?.map((e) => e as String)?.toList(),
+    );
+  }
 }
