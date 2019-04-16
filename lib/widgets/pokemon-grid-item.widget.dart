@@ -16,30 +16,27 @@ class PokemonGridItem extends StatelessWidget {
               builder: (_) => DetailsScreen(pokemon: pokemon),
             ),
           ),
-      child: Container(
-        color: Colors.blueGrey[700],
-        child: Column(
-          children: <Widget>[
-            Container(
-              child: Hero(
-                child: CachedNetworkImage(imageUrl: pokemon.image),
-                tag: pokemon.number,
-              ),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.blueGrey[400],
-              ),
+      child: Column(
+        children: <Widget>[
+          Container(
+            child: Hero(
+              child: CachedNetworkImage(imageUrl: pokemon.image),
+              tag: pokemon.number,
             ),
-            Text(
-              pokemon.name,
-              style: TextStyle(color: Colors.white, fontSize: 20),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.blueGrey[400],
             ),
-            Text(
-              pokemon.number,
-              style: TextStyle(color: Colors.blueGrey[200]),
-            ),
-          ],
-        ),
+          ),
+          Text(
+            pokemon.name,
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          Text(
+            pokemon.number,
+            style: TextStyle(color: Colors.blueGrey[200]),
+          ),
+        ],
       ),
     );
   }
