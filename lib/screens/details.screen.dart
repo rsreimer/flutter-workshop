@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/models/pokemon.model.dart';
 import 'package:pokedex/widgets/badge.widget.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Pokemon pokemon;
@@ -28,7 +29,9 @@ class DetailsScreen extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.6,
             child: Column(
               children: [
-                Hero(child: Image.network(pokemon.img), tag: pokemon.id),
+                Hero(
+                    child: CachedNetworkImage(imageUrl: pokemon.image),
+                    tag: pokemon.number),
                 Text(
                   pokemon.name.toString(),
                   style: TextStyle(fontSize: 24, color: Colors.white),
