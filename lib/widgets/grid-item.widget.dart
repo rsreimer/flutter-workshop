@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:pokedex/models/pokemon.model.dart';
 import 'package:pokedex/screens/details.screen.dart';
@@ -21,7 +22,7 @@ class GridItem extends StatelessWidget {
           children: <Widget>[
             Container(
               child: Hero(
-                child: Image.network(pokemon.image),
+                child: CachedNetworkImage(imageUrl: pokemon.image),
                 tag: pokemon.number,
               ),
               decoration: BoxDecoration(
