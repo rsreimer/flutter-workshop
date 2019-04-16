@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:pokedex/models/pokemon.model.dart';
 import 'package:pokedex/screens/details.screen.dart';
 
-class GridItem extends StatelessWidget {
+class PokemonGridItem extends StatelessWidget {
   final Pokemon pokemon;
 
-  GridItem({this.pokemon});
+  PokemonGridItem({this.pokemon});
 
   @override
   Widget build(BuildContext context) {
