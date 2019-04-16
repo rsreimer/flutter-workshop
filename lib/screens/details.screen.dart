@@ -26,7 +26,7 @@ class DetailsScreen extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.6,
             child: Column(
               children: [
-                Hero(child: Image.network(pokemon.img), tag: pokemon.id),
+                Hero(child: Image.network(pokemon.image), tag: pokemon.number),
                 Text(
                   pokemon.name.toString(),
                   style: TextStyle(fontSize: 24, color: Colors.white),

@@ -21,8 +21,8 @@ class GridItem extends StatelessWidget {
           children: <Widget>[
             Container(
               child: Hero(
-                child: Image.network(pokemon.img),
-                tag: pokemon.id,
+                child: Image.network(pokemon.image),
+                tag: pokemon.number,
               ),
               decoration: BoxDecoration(
                 color: Colors.blueGrey[400],
@@ -34,8 +34,8 @@ class GridItem extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
             Text(
-              "#" + pokemon.id.toString().padLeft(3, '0'),
-              style: TextStyle(color: Colors.white),
+              pokemon.number,
+              style: TextStyle(color: Colors.blueGrey[200]),
             ),
           ],
         ),
