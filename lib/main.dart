@@ -8,7 +8,7 @@ import 'package:http/http.dart';
 void main() => runApp(Pokedex());
 
 class Pokedex extends StatelessWidget {
-  // Client is used for HTTP-requests.
+  // Client is used for HTTP requests
   final client = Client();
 
   @override
@@ -23,30 +23,29 @@ class Pokedex extends StatelessWidget {
   }
 
   Widget buildPokemonScreen() {
-    // FutureBuilder is a Flutter widget used to build layouts with futures.
-    // The builder-method will be called, when a future resolves.
+    // FutureBuilder is a Flutter widget used to build layouts with async data, like data fetched from an API.
     return FutureBuilder(
-      future: fetchPokemons(),
-      // The snapshot contains the pokemon data.
+      future: fetchPokemonsFromAPI(),
+
+      // The snapshot contains the list of Pokémons
       builder: (BuildContext context, AsyncSnapshot<List<Pokemon>> snapshot) {
-        // If there is some data in the snapshot/future, return the HomeScreen
-        // Else return a loading indicator.
-        return snapshot.hasData
-            ? HomeScreen(pokemons: snapshot.data)
-            : Center(child: CircularProgressIndicator());
+        if (snapshot.hasData) {
+          return HomeScreen(pokemons: snapshot.data);
+        } else {
+          // Show a loading spinner
+          return Center(child: CircularProgressIndicator());
+        }
       },
     );
   }
 
-  // Returns a Future with the fetched pokemons
-  Future<List<Pokemon>> fetchPokemons() async {
-    // HTTP Get request
+  Future<List<Pokemon>> fetchPokemonsFromAPI() async {
     final response = await client.get('https://raw.githubusercontent.com/rsr-itminds/flutter-workshop/master/data/pokedex.json');
 
-    // Get the JSON-object from the response 
+    // Get the JSON data from the response
     final List<dynamic> data = json.decode(response.body);
 
-    // Convert JSON to Pokemons by using the named constructor fromJson.
+    // Convert JSON to Pokemons by using the named constructor fromJson
     return data.map((json) => Pokemon.fromJson(json)).toList();
   }
 }
