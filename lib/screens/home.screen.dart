@@ -10,14 +10,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Map each pokémon to a PokemonGridItem.
+    // Map each Pokémon to a PokemonGridItem
     List<Widget> list =
         pokemons.map((p) => PokemonGridItem(pokemon: p)).toList();
 
+    // Show the list of PokemonGridItems in a grid
     return Container(
       color: Colors.blueGrey[700],
       child: GridView.count(
-        // Use the list of PokemonGridItems to show in the grid.
         children: list,
         crossAxisCount: 2,
       ),
