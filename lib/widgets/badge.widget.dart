@@ -16,6 +16,8 @@ class PokeBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
+        // If there is no title, simply put in a empty Container,
+        // Else show the text.
         title == ''
             ? Container()
             : Text(

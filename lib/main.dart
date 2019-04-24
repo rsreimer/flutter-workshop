@@ -36,6 +36,7 @@ class Pokedex extends StatelessWidget {
         // If there is some data in the snapshot/future, return the HomeScreen
         // Else return a loading indicator.
         return snapshot.hasData
+            // Pass the list of pokemons to the HomeScreen
             ? HomeScreen(pokemons: snapshot.data)
             : Center(child: CircularProgressIndicator());
       },
