@@ -15,4 +15,4 @@ In Android Studio click on “AVD Manager”-icon in the upper right corner. Thi
 When the emulator is up and running, you can start the app in debug mode by navigating to Debug -> Start Debugging in the topmenu, or you can just start the app by running `flutter run`. Debug mode is of course preferable.
 
 ## Build your Pokédex
-Have a look at the assignments.pdf in this repository to get started.
+Have a look at assignments.pdf in this repository to get started.
