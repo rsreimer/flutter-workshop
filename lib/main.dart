@@ -41,7 +41,7 @@ class Pokedex extends StatelessWidget {
   // Returns a Future with the fetched pokemons
   Future<List<Pokemon>> fetchPokemons() async {
     // HTTP Get request
-    final response = await client.get('https://raw.githubusercontent.com/rsritminds/flutter-workshop/master/data/pokedex.json');
+    final response = await client.get('https://raw.githubusercontent.com/rsr-itminds/flutter-workshop/master/data/pokedex.json');
 
     // Get the JSON-object from the response 
     final List<dynamic> data = json.decode(response.body);
