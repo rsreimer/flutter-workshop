@@ -9,6 +9,7 @@ class Pokemon {
 
   Pokemon(this.name, this.image, this.number, this.type, this.height, this.weight, this.weaknesses);
 
+  // Constructor used for conversion from JSON to Pokémons.
   factory Pokemon.fromJson(Map<String, dynamic> json) {
     return Pokemon(
       json['name'] as String,
