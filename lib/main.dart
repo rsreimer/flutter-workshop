@@ -2,8 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:pokedex/models/pokemon.model.dart';
+import 'package:pokedex/providers/pokemon-storage-system.dart';
 import 'package:pokedex/screens/home.screen.dart';
 import 'package:http/http.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(Pokedex());
 
@@ -13,16 +15,19 @@ class Pokedex extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Pokédex',
-      home: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text("Pokédex"),
-          backgroundColor: Colors.blueGrey[500],
-        ),
-        body: buildPokemonScreen(),
-      ),
+    return ChangeNotifierProvider(
+      create: (_) => PokemonStorageSystem(),
+      child: MaterialApp(
+          title: 'Pokédex',
+          home: Scaffold(
+            appBar: AppBar(
+              centerTitle: true,
+              title: Text("Pokédex"),
+              backgroundColor: Colors.blueGrey[500],
+            ),
+            body: buildPokemonScreen(),
+          ),
+        )
     );
   }
 

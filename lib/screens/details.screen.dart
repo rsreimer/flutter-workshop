@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pokedex/models/pokemon.model.dart';
 import 'package:pokedex/widgets/badge.widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:pokedex/widgets/pokeball.widget.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Pokemon pokemon;
@@ -31,9 +32,11 @@ class DetailsScreen extends StatelessWidget {
             child: ListView(
               shrinkWrap: true,
               children: [
-                Hero(
-                    child: CachedNetworkImage(imageUrl: pokemon.image, height: 100,),
-                    tag: pokemon.number),
+                Container(
+                  height: 200,
+                  width: 200,
+                  child: Pokeball(pokemon),
+                ),
                 Text(
                   pokemon.name.toString(),
                   style: TextStyle(fontSize: 24, color: Colors.white),
