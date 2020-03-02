@@ -5,8 +5,8 @@
 3. Optional: [Make sure everything works](https://flutter.dev/docs/get-started/test-drive)
 
 ## Start the Pokédex
-After you have cloned the repository, you will need to run `flutter packages get`.
-This will fetch the dependencies of the project. When this completes you are ready to start the app. 
+After you have cloned the repository, you will need to run `flutter pub get`.
+This will install the dependencies of the project. When this completes you are ready to start the app.
 
 In Visual Studio Code this is done by first clicking on “No Device” in the bottom right and thereafter selecting the installed emulator, you wish to use.
 
